@@ -1,3 +1,3 @@
 # SMSGate
-A simple Xamarin application that starts a server and sends sms on request.
+A simple and flexibile SMS gateway written in C# with Xamarin.
 To build you need Visual Studio with Xamarin installed.
