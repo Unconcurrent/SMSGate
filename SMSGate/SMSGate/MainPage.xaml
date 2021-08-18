@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SMSGate.MainPage"
+             BackgroundColor="#2196F3">
+
+    <StackLayout>
+        <Label TextColor="White" FontSize="30" HorizontalTextAlignment="Center">SMSGate</Label>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+            <Label TextColor="White" FontSize="20">Enabled:</Label>
+            <Switch x:Name="EnabledSwitch" Toggled="EnabledSwitch_OnToggled"></Switch>
+        </StackLayout>
+
+
+        <AbsoluteLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" AbsoluteLayout.LayoutBounds="0, 0, 380, 100">
+                <AbsoluteLayout>
+                    <Label AbsoluteLayout.LayoutBounds="0, -20, 45, 23" TextColor="White" FontSize="20">Port:11111</Label>
+                </AbsoluteLayout>
+
+                <AbsoluteLayout>
+                    <Entry TextChanged="PortBox_OnTextChanged" x:Name="PortBox" TextColor="DeepPink" AbsoluteLayout.LayoutBounds="0, -30, 90, 50" Text="5005"></Entry>
+                </AbsoluteLayout>
+
+            </StackLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="0, 30, 380, 40" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                <AbsoluteLayout>
+                    <Label TextColor="White" FontSize="20" AbsoluteLayout.LayoutBounds="0, 0, 150, 40">Current IP:Port =</Label>
+                </AbsoluteLayout>
+
+                <AbsoluteLayout>
+                    <Entry x:Name="ipPortBox" TextColor="DeepPink" AbsoluteLayout.LayoutBounds="0, -10, 180, 50" Text="None"></Entry>
+                </AbsoluteLayout>
+
+            </StackLayout>
+        </AbsoluteLayout>
+
+        <Frame BackgroundColor="#2196F3">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label TextColor="White" FontSize="20" VerticalTextAlignment="Center">Logs:</Label>
+                <Button TextColor="White" BackgroundColor="#2196F3" BorderColor="DeepPink" FontSize="18" BorderWidth="2" CornerRadius="10" Scale="0.8" HorizontalOptions="End" Text="Clear" Clicked="ClearLogsButton_OnClicked"></Button>
+            </StackLayout>
+        </Frame>
+        <ScrollView x:Name="ScrollView">
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Editor x:Name="logsBox" TextColor="White" Text="Program Started" IsSpellCheckEnabled="false" IsReadOnly="True" AutoSize="TextChanges" IsTabStop="True"></Editor>
+                <Label x:Name="EndLabel"></Label>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>
